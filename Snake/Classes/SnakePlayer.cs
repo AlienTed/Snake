@@ -39,7 +39,20 @@ namespace Snake.Classes
             return nextPoint;
         }
 
-        public void HanleKey(ConsoleKey key)
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if(head.IsHit(food))
+            {
+                food.SetSymbol(head.GetSymbol());
+                points.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public void HandleKey(ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)
                 direction = Direction.LEFT;

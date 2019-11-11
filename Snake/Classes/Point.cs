@@ -15,6 +15,16 @@ namespace Snake.Classes
             this.symbol = point.symbol;
         }
 
+        public void SetSymbol(char symbol)
+        {
+            this.symbol = symbol;
+        }
+
+        public char GetSymbol()
+        {
+            return symbol;
+        }
+
         public void Move(int offset, Direction direction)
         {
             switch(direction)
@@ -46,6 +56,12 @@ namespace Snake.Classes
             this.y = y;
             this.symbol = symbol;
         }
+
+        internal bool IsHit(Point food)
+        {
+            return this.x == food.x && this.y == food.y;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
