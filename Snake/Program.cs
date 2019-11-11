@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snake.Classes;
+using System;
 
 namespace Snake
 {
@@ -6,23 +7,19 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            int x1 = 1;
-            int y1 = 3;
-            char symbol1 = '*';
-            Draw(x1, y1, symbol1);
+            Point point1 = new Point();
+            point1.x = 1;
+            point1.y = 3;
+            point1.symbol = '*';
+            point1.Draw();
 
-            int x2 = 4;
-            int y2 = 5;
-            char symbol2 = '#';
-            Draw(x2, y2, symbol2);
+            Point point2 = new Point();
+            point2.x = 4;
+            point2.y = 5;
+            point2.symbol = '#';
+            point2.Draw();
 
             Console.ReadKey();
-        }
-
-        static void Draw(int x, int y, char sym)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sym);
         }
     }
 }
