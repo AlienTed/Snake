@@ -26,12 +26,18 @@ namespace Snake.Classes
                     x -= offset;
                     break;
                 case Direction.UP:
-                    y += offset;
-                    break;
-                case Direction.DOWN:
                     y -= offset;
                     break;
+                case Direction.DOWN:
+                    y += offset;
+                    break;
             }
+        }
+
+        internal void Clear()
+        {
+            symbol = ' ';
+            Draw();
         }
 
         public Point(int x, int y, char symbol)
