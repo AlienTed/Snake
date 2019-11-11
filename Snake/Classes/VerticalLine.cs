@@ -2,12 +2,12 @@
 
 namespace Snake.Classes
 {
-    class HorizontalLine : Figure
+    class VerticalLine : Figure
     {
-        public HorizontalLine(int xLeft, int xRight, int y, char symbol)
+        public VerticalLine(int yTop, int yBottom, int x, char symbol)
         {
             points = new List<Point>();
-            for(int x = xLeft; x <= xRight; x++)
+            for (int y = yTop; y <= yBottom; y++)
             {
                 points.Add(new Point(x, y, symbol));
             }

@@ -1,6 +1,5 @@
 ﻿using Snake.Classes;
 using System;
-using System.Collections.Generic;
 
 namespace Snake
 {
@@ -8,14 +7,19 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point point1 = new Point(1, 3, '*');
-            point1.Draw();
 
-            Point point2 = new Point(4, 5, '#');
-            point2.Draw();
+            HorizontalLine topBoarder = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine bottomBoarder = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine leftBoarder = new VerticalLine(0, 24, 0, '+');
+            VerticalLine rightBoarder = new VerticalLine(0, 24, 78, '+');
 
-            HorizontalLine horizontalLine = new HorizontalLine(5, 10, 8, '+');
-            horizontalLine.Draw();
+            topBoarder.Draw();
+            bottomBoarder.Draw();
+            leftBoarder.Draw();
+            rightBoarder.Draw();
+
+            SnakePlayer snake = new SnakePlayer(new Point(4, 5, '*'), 4, Direction.RIGHT);
+            snake.Draw();
 
             Console.ReadKey();
         }

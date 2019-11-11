@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Snake.Classes
 {
@@ -9,6 +7,32 @@ namespace Snake.Classes
         private int x;
         private int y;
         private char symbol;
+
+        public Point(Point point)
+        {
+            this.x = point.x;
+            this.y = point.y;
+            this.symbol = point.symbol;
+        }
+
+        public void Move(int offset, Direction direction)
+        {
+            switch(direction)
+            {
+                case Direction.RIGHT:
+                    x += offset;
+                    break;
+                case Direction.LEFT:
+                    x -= offset;
+                    break;
+                case Direction.UP:
+                    y += offset;
+                    break;
+                case Direction.DOWN:
+                    y -= offset;
+                    break;
+            }
+        }
 
         public Point(int x, int y, char symbol)
         {
@@ -20,6 +44,11 @@ namespace Snake.Classes
         {
             Console.SetCursorPosition(x, y);
             Console.Write(symbol);
+        }
+
+        public override string ToString()
+        {
+            return x + ", " + y + ", " + symbol;
         }
     }
 }
